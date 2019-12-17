@@ -1,0 +1,154 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.InfoGainAttributeEval 
+Search:       weka.attributeSelection.Ranker -T -1.7976931348623157E308 -N -1
+Relation:     flows_normalized-weka.filters.supervised.instance.SpreadSubsample-M1.0-X0.0-S1-weka.filters.unsupervised.attribute.Remove-R26-61-weka.filters.unsupervised.attribute.Remove-R66
+Instances:    133590
+Attributes:   66
+              totalDestinationBytes
+              totalDestinationPackets
+              totalSourceBytes
+              totalSourcePackets
+              sourcePayload
+              destinationPayload
+              timeLength
+              sourceByteRate
+              destinationByteRate
+              sourcePacketRate
+              destinationPacketRate
+              avgSourcePacketSize
+              avgDestinationPacketSize
+              totalDestinationBytesDiffMedianScal
+              totalDestinationPacketsDiffMedianScal
+              totalSourceBytesDiffMedianScal
+              totalSourcePacketsDiffMedianScal
+              timeLengthDiffMedianScal
+              avgDestinationPacketSizeDiffMedianScal
+              avgSourcePacketSizeDiffMedianScal
+              destinationByteRateDiffMedianScal
+              destinationPacketRateDiffMedianScal
+              sourceByteRateDiffMedianScal
+              sourcePacketRateDiffMedianScal
+              appName_BitTorrent
+              protocolName_icmp_ip
+              protocolName_igmp
+              protocolName_ip
+              protocolName_tcp_ip
+              protocolName_udp_ip
+              sourceTCPFlag_A
+              sourceTCPFlag_Blank
+              sourceTCPFlag_F
+              sourceTCPFlag_N/A
+              sourceTCPFlag_P
+              sourceTCPFlag_R
+              sourceTCPFlag_S
+              sourceTCPFlag_U
+              destinationTCPFlag_A
+              destinationTCPFlag_Blank
+              destinationTCPFlag_F
+              destinationTCPFlag_N/A
+              destinationTCPFlag_P
+              destinationTCPFlag_R
+              destinationTCPFlag_S
+              sourcePortResume_wellKnown
+              sourcePortResume_registered
+              sourcePortResume_ephemeral
+              destinationPortResume_wellKnown
+              destinationPortResume_registered
+              destinationPortResume_ephemeral
+              sourceResume_NATServer
+              sourceResume_external
+              sourceResume_internal
+              sourceResume_invalid
+              sourceResume_mainServer
+              sourceResume_private
+              sourceResume_secondaryServer
+              destinationResume_NATServer
+              destinationResume_external
+              destinationResume_internal
+              destinationResume_invalid
+              destinationResume_mainServer
+              destinationResume_private
+              destinationResume_secondaryServer
+              Tag
+Evaluation mode:    evaluate on all training data
+
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Attribute ranking.
+
+Attribute Evaluator (supervised, Class (nominal): 66 Tag):
+	Information Gain Ranking Filter
+
+Ranked attributes:
+ 0.8406333    19 avgDestinationPacketSizeDiffMedianScal
+ 0.8365018    20 avgSourcePacketSizeDiffMedianScal
+ 0.8287374    12 avgSourcePacketSize
+ 0.8253313    13 avgDestinationPacketSize
+ 0.805442     16 totalSourceBytesDiffMedianScal
+ 0.7926609     1 totalDestinationBytes
+ 0.7665893     2 totalDestinationPackets
+ 0.7630671    15 totalDestinationPacketsDiffMedianScal
+ 0.7620266     4 totalSourcePackets
+ 0.7580709     3 totalSourceBytes
+ 0.745353     14 totalDestinationBytesDiffMedianScal
+ 0.7334832    60 destinationResume_external
+ 0.7204871    17 totalSourcePacketsDiffMedianScal
+ 0.6989378    24 sourcePacketRateDiffMedianScal
+ 0.6970357    23 sourceByteRateDiffMedianScal
+ 0.5773154    21 destinationByteRateDiffMedianScal
+ 0.5668778    22 destinationPacketRateDiffMedianScal
+ 0.5331584     7 timeLength
+ 0.5085535    18 timeLengthDiffMedianScal
+ 0.4933156     9 destinationByteRate
+ 0.4620452    11 destinationPacketRate
+ 0.4536134     8 sourceByteRate
+ 0.432767     10 sourcePacketRate
+ 0.3325416    63 destinationResume_mainServer
+ 0.1294923    37 sourceTCPFlag_S
+ 0.114471     30 protocolName_udp_ip
+ 0.1056558    29 protocolName_tcp_ip
+ 0.1056558    42 destinationTCPFlag_N/A
+ 0.1056558    34 sourceTCPFlag_N/A
+ 0.0931969    61 destinationResume_internal
+ 0.0857159    39 destinationTCPFlag_A
+ 0.0694564    56 sourceResume_mainServer
+ 0.0505303    44 destinationTCPFlag_R
+ 0.049013     50 destinationPortResume_registered
+ 0.0387414    49 destinationPortResume_wellKnown
+ 0.0298672    53 sourceResume_external
+ 0.0146908     6 destinationPayload
+ 0.0133436    48 sourcePortResume_ephemeral
+ 0.0084201    47 sourcePortResume_registered
+ 0.0069968    65 destinationResume_secondaryServer
+ 0.0064677    59 destinationResume_NATServer
+ 0.0056229    54 sourceResume_internal
+ 0.0054301     5 sourcePayload
+ 0.0053789    46 sourcePortResume_wellKnown
+ 0.0046353    31 sourceTCPFlag_A
+ 0.0029679    36 sourceTCPFlag_R
+ 0.0023142    25 appName_BitTorrent
+ 0.0009181    43 destinationTCPFlag_P
+ 0.0007841    51 destinationPortResume_ephemeral
+ 0.000514     35 sourceTCPFlag_P
+ 0.000452     32 sourceTCPFlag_Blank
+ 0.0003474    58 sourceResume_secondaryServer
+ 0.0002977    40 destinationTCPFlag_Blank
+ 0.0001797    38 sourceTCPFlag_U
+ 0.000135     45 destinationTCPFlag_S
+ 0.0000973    52 sourceResume_NATServer
+ 0.0000566    41 destinationTCPFlag_F
+ 0.000052     26 protocolName_icmp_ip
+ 0            27 protocolName_igmp
+ 0            64 destinationResume_private
+ 0            62 destinationResume_invalid
+ 0            28 protocolName_ip
+ 0            57 sourceResume_private
+ 0            55 sourceResume_invalid
+ 0            33 sourceTCPFlag_F
+
+Selected attributes: 19,20,12,13,16,1,2,15,4,3,14,60,17,24,23,21,22,7,18,9,11,8,10,63,37,30,29,42,34,61,39,56,44,50,49,53,6,48,47,65,59,54,5,46,31,36,25,43,51,35,32,58,40,38,45,52,41,26,27,64,62,28,57,55,33 : 65
+

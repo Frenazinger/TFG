@@ -1,0 +1,114 @@
+=== Model information ===
+
+Filename:     RF_Final.model
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -attribute-importance -I 700 -num-slots 8 -K 12 -M 1.0 -V 0.001 -S 1
+Relation:     flows-weka.filters.supervised.instance.SpreadSubsample-M1.0-X0.0-S1-weka.filters.unsupervised.attribute.Remove-R25-61-weka.filters.unsupervised.attribute.Remove-R65-weka.filters.unsupervised.attribute.Remove-R41,60,38,55,43,49,48,52,6,47,46,64,58,53,5,45,30,35,42,50,34,31,57,39,37,44,51,40,25,54,27,61,63,56,26,32
+Attributes:   29
+              totalDestinationBytes
+              totalDestinationPackets
+              totalSourceBytes
+              totalSourcePackets
+              timeLength
+              sourceByteRate
+              destinationByteRate
+              sourcePacketRate
+              destinationPacketRate
+              avgSourcePacketSize
+              avgDestinationPacketSize
+              totalDestinationBytesDiffMedianScal
+              totalDestinationPacketsDiffMedianScal
+              totalSourceBytesDiffMedianScal
+              totalSourcePacketsDiffMedianScal
+              timeLengthDiffMedianScal
+              avgDestinationPacketSizeDiffMedianScal
+              avgSourcePacketSizeDiffMedianScal
+              destinationByteRateDiffMedianScal
+              destinationPacketRateDiffMedianScal
+              sourceByteRateDiffMedianScal
+              sourcePacketRateDiffMedianScal
+              protocolName_tcp_ip
+              protocolName_udp_ip
+              sourceTCPFlag_N/A
+              sourceTCPFlag_S
+              destinationResume_external
+              destinationResume_mainServer
+              Tag
+
+=== Classifier model ===
+
+RandomForest
+
+Bagging with 700 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 12 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Attribute importance based on average impurity decrease (and number of nodes using that attribute)
+
+      0.37 (  1638)  destinationResume_external
+      0.33 ( 13212)  totalDestinationPackets
+      0.32 ( 37289)  totalDestinationBytes
+      0.26 ( 12745)  destinationByteRate
+      0.26 (  9905)  totalSourcePackets
+      0.25 ( 34257)  totalSourceBytes
+      0.24 ( 11356)  timeLength
+      0.23 ( 16787)  sourceByteRate
+      0.22 (  4871)  destinationPacketRate
+      0.22 (   235)  sourceTCPFlag_N/A
+      0.21 (   297)  protocolName_tcp_ip
+      0.21 (  5949)  sourcePacketRate
+      0.2  ( 18589)  avgDestinationPacketSize
+      0.19 ( 24544)  avgSourcePacketSize
+      0.17 (   391)  protocolName_udp_ip
+      0.16 (  1601)  sourceTCPFlag_S
+      0.16 ( 13405)  avgDestinationPacketSizeDiffMedianScal
+      0.16 (  1688)  destinationResume_mainServer
+      0.15 ( 11672)  totalDestinationBytesDiffMedianScal
+      0.15 (  7164)  destinationByteRateDiffMedianScal
+      0.15 (  8101)  totalDestinationPacketsDiffMedianScal
+      0.15 ( 16418)  avgSourcePacketSizeDiffMedianScal
+      0.14 ( 15181)  totalSourceBytesDiffMedianScal
+      0.14 (  7140)  timeLengthDiffMedianScal
+      0.14 (  5822)  totalSourcePacketsDiffMedianScal
+      0.13 (  3846)  destinationPacketRateDiffMedianScal
+      0.12 (  7684)  sourceByteRateDiffMedianScal
+      0.1  (  3677)  sourcePacketRateDiffMedianScal
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     flows
+Instances:     unknown (yet). Reading incrementally
+Attributes:   103
+
+=== Summary ===
+
+Correctly Classified Instances     1346049               99.7893 %
+Incorrectly Classified Instances      2842                0.2107 %
+Kappa statistic                          0.978 
+Mean absolute error                      0.005 
+Root mean squared error                  0.0433
+Total Number of Instances          1348891     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,998    0,002    1,000      0,998    0,999      0,978    1,000     1,000     Normal
+                 0,998    0,002    0,961      0,998    0,979      0,978    1,000     0,996     Attack
+Weighted Avg.    0,998    0,002    0,998      0,998    0,998      0,978    1,000     1,000     
+
+=== Confusion Matrix ===
+
+       a       b   <-- classified as
+ 1279368    2728 |       a = Normal
+     114   66681 |       b = Attack
+
+17:39:21: Weka Explorer
+17:39:21: (c) 1999-2018 The University of Waikato, Hamilton, New Zealand
+17:39:21: web: http://www.cs.waikato.ac.nz/~ml/weka/
+17:39:21: Started on domingo, 1 septiembre 2019
+17:39:39: Base relation is now flows_normalized-weka.filters.supervised.instance.SpreadSubsample-M1.0-X0.0-S1-weka.filters.unsupervised.attribute.Remove-R26-61-weka.filters.unsupervised.attribute.Remove-R34,61,39,56,44,50,49,53,6,48,47,65,59,54,5,46,31,36,25,43,51,35,32,58,40,38,45,52,41,26,27,64,62,28,57,55,33-weka.filters.supervised.instance.StratifiedRemoveFolds-S0-N10-F1-weka.filters.unsupervised.attribute.Remove-R29 (13359 instances)
+17:39:54: Loaded model from file 'LR_Final.model'
+17:40:22: Loaded model from file 'RF_Final.model'
+19:46:08: Re-evaluating classifier (17:40:22 - trees.RandomForest from file 'RF_Final.model') on test set
+19:51:13: Finished re-evaluation

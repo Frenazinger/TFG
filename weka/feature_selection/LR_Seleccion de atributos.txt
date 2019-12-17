@@ -1,0 +1,147 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.CfsSubsetEval -P 4 -E 8
+Search:       weka.attributeSelection.GreedyStepwise -R -T -1.7976931348623157E308 -N -1 -num-slots 4
+Relation:     flows-weka.filters.supervised.instance.SpreadSubsample-M1.0-X0.0-S1-weka.filters.unsupervised.attribute.Remove-R3-4,11,16-17,22-weka.filters.unsupervised.attribute.Remove-R19-55-weka.filters.unsupervised.attribute.Remove-R59
+Instances:    133590
+Attributes:   59
+              totalDestinationBytes
+              totalDestinationPackets
+              sourcePayload
+              destinationPayload
+              timeLength
+              sourceByteRate
+              destinationByteRate
+              sourcePacketRate
+              avgSourcePacketSize
+              avgDestinationPacketSize
+              totalDestinationBytesDiffMedianScal
+              totalDestinationPacketsDiffMedianScal
+              timeLengthDiffMedianScal
+              avgDestinationPacketSizeDiffMedianScal
+              avgSourcePacketSizeDiffMedianScal
+              destinationByteRateDiffMedianScal
+              sourceByteRateDiffMedianScal
+              sourcePacketRateDiffMedianScal
+              protocolName_icmp_ip
+              protocolName_igmp
+              protocolName_ip
+              protocolName_tcp_ip
+              protocolName_udp_ip
+              sourceTCPFlag_A
+              sourceTCPFlag_Blank
+              sourceTCPFlag_F
+              sourceTCPFlag_N/A
+              sourceTCPFlag_P
+              sourceTCPFlag_R
+              sourceTCPFlag_S
+              sourceTCPFlag_U
+              destinationTCPFlag_A
+              destinationTCPFlag_Blank
+              destinationTCPFlag_F
+              destinationTCPFlag_N/A
+              destinationTCPFlag_P
+              destinationTCPFlag_R
+              destinationTCPFlag_S
+              sourcePortResume_wellKnown
+              sourcePortResume_registered
+              sourcePortResume_ephemeral
+              destinationPortResume_wellKnown
+              destinationPortResume_registered
+              destinationPortResume_ephemeral
+              sourceResume_NATServer
+              sourceResume_external
+              sourceResume_internal
+              sourceResume_invalid
+              sourceResume_mainServer
+              sourceResume_private
+              sourceResume_secondaryServer
+              destinationResume_NATServer
+              destinationResume_external
+              destinationResume_internal
+              destinationResume_invalid
+              destinationResume_mainServer
+              destinationResume_private
+              destinationResume_secondaryServer
+              Tag
+Evaluation mode:    evaluate on all training data
+
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Greedy Stepwise (forwards).
+	Start set: no attributes
+
+	Ranking is the order that attributes were added, starting 
+	with no attributes. The merit scores in the left column
+	are the goodness of the subset after the adding the
+	corresponding attribute in the right column to the subset.
+
+Attribute Subset Evaluator (supervised, Class (nominal): 59 Tag):
+	CFS Subset Evaluator
+	Including locally predictive attributes
+
+Ranked attributes:
+ 0.736    53 destinationResume_external
+ 0.634    10 avgDestinationPacketSize
+ 0.603    56 destinationResume_mainServer
+ 0.594    23 protocolName_udp_ip
+ 0.568     6 sourceByteRate
+ 0.544    54 destinationResume_internal
+ 0.528    30 sourceTCPFlag_S
+ 0.517    15 avgSourcePacketSizeDiffMedianScal
+ 0.505    58 destinationResume_secondaryServer
+ 0.494    12 totalDestinationPacketsDiffMedianScal
+ 0.486    52 destinationResume_NATServer
+ 0.477    46 sourceResume_external
+ 0.469     7 destinationByteRate
+ 0.463    49 sourceResume_mainServer
+ 0.457    51 sourceResume_secondaryServer
+ 0.451    31 sourceTCPFlag_U
+ 0.445    25 sourceTCPFlag_Blank
+ 0.441     1 totalDestinationBytes
+ 0.436    29 sourceTCPFlag_R
+ 0.431     9 avgSourcePacketSize
+ 0.427    13 timeLengthDiffMedianScal
+ 0.423    22 protocolName_tcp_ip
+ 0.42     14 avgDestinationPacketSizeDiffMedianScal
+ 0.417    43 destinationPortResume_registered
+ 0.413    44 destinationPortResume_ephemeral
+ 0.41     19 protocolName_icmp_ip
+ 0.407    16 destinationByteRateDiffMedianScal
+ 0.404    11 totalDestinationBytesDiffMedianScal
+ 0.401    27 sourceTCPFlag_N/A
+ 0.398     8 sourcePacketRate
+ 0.395    33 destinationTCPFlag_Blank
+ 0.391     2 totalDestinationPackets
+ 0.388    35 destinationTCPFlag_N/A
+ 0.385    18 sourcePacketRateDiffMedianScal
+ 0.383    37 destinationTCPFlag_R
+ 0.38     45 sourceResume_NATServer
+ 0.377    39 sourcePortResume_wellKnown
+ 0.374    17 sourceByteRateDiffMedianScal
+ 0.371    32 destinationTCPFlag_A
+ 0.366    40 sourcePortResume_registered
+ 0.361    42 destinationPortResume_wellKnown
+ 0.356     4 destinationPayload
+ 0.351     5 timeLength
+ 0.345    41 sourcePortResume_ephemeral
+ 0.339     3 sourcePayload
+ 0.333    47 sourceResume_internal
+ 0.326    34 destinationTCPFlag_F
+ 0.317    24 sourceTCPFlag_A
+ 0.309    36 destinationTCPFlag_P
+ 0.301    28 sourceTCPFlag_P
+ 0.293    38 destinationTCPFlag_S
+ 0.261    20 protocolName_igmp
+ 0.237    21 protocolName_ip
+ 0.219    26 sourceTCPFlag_F
+ 0.204    48 sourceResume_invalid
+ 0.191    50 sourceResume_private
+ 0.181    55 destinationResume_invalid
+ 0.171    57 destinationResume_private
+
+Selected attributes: 53,10,56,23,6,54,30,15,58,12,52,46,7,49,51,31,25,1,29,9,13,22,14,43,44,19,16,11,27,8,33,2,35,18,37,45,39,17,32,40,42,4,5,41,3,47,34,24,36,28,38,20,21,26,48,50,55,57 : 58
+

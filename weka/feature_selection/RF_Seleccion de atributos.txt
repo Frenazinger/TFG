@@ -1,0 +1,152 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.InfoGainAttributeEval 
+Search:       weka.attributeSelection.Ranker -T -1.7976931348623157E308 -N -1
+Relation:     flows-weka.filters.supervised.instance.SpreadSubsample-M1.0-X0.0-S1-weka.filters.unsupervised.attribute.Remove-R25-61-weka.filters.unsupervised.attribute.Remove-R65
+Instances:    133590
+Attributes:   65
+              totalDestinationBytes
+              totalDestinationPackets
+              totalSourceBytes
+              totalSourcePackets
+              sourcePayload
+              destinationPayload
+              timeLength
+              sourceByteRate
+              destinationByteRate
+              sourcePacketRate
+              destinationPacketRate
+              avgSourcePacketSize
+              avgDestinationPacketSize
+              totalDestinationBytesDiffMedianScal
+              totalDestinationPacketsDiffMedianScal
+              totalSourceBytesDiffMedianScal
+              totalSourcePacketsDiffMedianScal
+              timeLengthDiffMedianScal
+              avgDestinationPacketSizeDiffMedianScal
+              avgSourcePacketSizeDiffMedianScal
+              destinationByteRateDiffMedianScal
+              destinationPacketRateDiffMedianScal
+              sourceByteRateDiffMedianScal
+              sourcePacketRateDiffMedianScal
+              protocolName_icmp_ip
+              protocolName_igmp
+              protocolName_ip
+              protocolName_tcp_ip
+              protocolName_udp_ip
+              sourceTCPFlag_A
+              sourceTCPFlag_Blank
+              sourceTCPFlag_F
+              sourceTCPFlag_N/A
+              sourceTCPFlag_P
+              sourceTCPFlag_R
+              sourceTCPFlag_S
+              sourceTCPFlag_U
+              destinationTCPFlag_A
+              destinationTCPFlag_Blank
+              destinationTCPFlag_F
+              destinationTCPFlag_N/A
+              destinationTCPFlag_P
+              destinationTCPFlag_R
+              destinationTCPFlag_S
+              sourcePortResume_wellKnown
+              sourcePortResume_registered
+              sourcePortResume_ephemeral
+              destinationPortResume_wellKnown
+              destinationPortResume_registered
+              destinationPortResume_ephemeral
+              sourceResume_NATServer
+              sourceResume_external
+              sourceResume_internal
+              sourceResume_invalid
+              sourceResume_mainServer
+              sourceResume_private
+              sourceResume_secondaryServer
+              destinationResume_NATServer
+              destinationResume_external
+              destinationResume_internal
+              destinationResume_invalid
+              destinationResume_mainServer
+              destinationResume_private
+              destinationResume_secondaryServer
+              Tag
+Evaluation mode:    evaluate on all training data
+
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Attribute ranking.
+
+Attribute Evaluator (supervised, Class (nominal): 65 Tag):
+	Information Gain Ranking Filter
+
+Ranked attributes:
+ 0.8406333    19 avgDestinationPacketSizeDiffMedianScal
+ 0.8365018    20 avgSourcePacketSizeDiffMedianScal
+ 0.805442     16 totalSourceBytesDiffMedianScal
+ 0.8021542     3 totalSourceBytes
+ 0.7672258    13 avgDestinationPacketSize
+ 0.7630671    15 totalDestinationPacketsDiffMedianScal
+ 0.7552553     1 totalDestinationBytes
+ 0.745353     14 totalDestinationBytesDiffMedianScal
+ 0.7334832    59 destinationResume_external
+ 0.7237885    12 avgSourcePacketSize
+ 0.7204871    17 totalSourcePacketsDiffMedianScal
+ 0.6989378    24 sourcePacketRateDiffMedianScal
+ 0.6970357    23 sourceByteRateDiffMedianScal
+ 0.5773154    21 destinationByteRateDiffMedianScal
+ 0.5668778    22 destinationPacketRateDiffMedianScal
+ 0.539086      8 sourceByteRate
+ 0.5324124     9 destinationByteRate
+ 0.5085535    18 timeLengthDiffMedianScal
+ 0.4926845     2 totalDestinationPackets
+ 0.4752083    11 destinationPacketRate
+ 0.4666739     4 totalSourcePackets
+ 0.4666225    10 sourcePacketRate
+ 0.3325416    62 destinationResume_mainServer
+ 0.1294923    36 sourceTCPFlag_S
+ 0.1247091     7 timeLength
+ 0.114471     29 protocolName_udp_ip
+ 0.1056558    28 protocolName_tcp_ip
+ 0.1056558    33 sourceTCPFlag_N/A
+ 0.1056558    41 destinationTCPFlag_N/A
+ 0.0931969    60 destinationResume_internal
+ 0.0857159    38 destinationTCPFlag_A
+ 0.0694564    55 sourceResume_mainServer
+ 0.0505303    43 destinationTCPFlag_R
+ 0.049013     49 destinationPortResume_registered
+ 0.0387414    48 destinationPortResume_wellKnown
+ 0.0298672    52 sourceResume_external
+ 0.0146908     6 destinationPayload
+ 0.0133436    47 sourcePortResume_ephemeral
+ 0.0084201    46 sourcePortResume_registered
+ 0.0069968    64 destinationResume_secondaryServer
+ 0.0064677    58 destinationResume_NATServer
+ 0.0056229    53 sourceResume_internal
+ 0.0054301     5 sourcePayload
+ 0.0053789    45 sourcePortResume_wellKnown
+ 0.0046353    30 sourceTCPFlag_A
+ 0.0029679    35 sourceTCPFlag_R
+ 0.0009181    42 destinationTCPFlag_P
+ 0.0007841    50 destinationPortResume_ephemeral
+ 0.000514     34 sourceTCPFlag_P
+ 0.000452     31 sourceTCPFlag_Blank
+ 0.0003474    57 sourceResume_secondaryServer
+ 0.0002977    39 destinationTCPFlag_Blank
+ 0.0001797    37 sourceTCPFlag_U
+ 0.000135     44 destinationTCPFlag_S
+ 0.0000973    51 sourceResume_NATServer
+ 0.0000566    40 destinationTCPFlag_F
+ 0.000052     25 protocolName_icmp_ip
+ 0            54 sourceResume_invalid
+ 0            27 protocolName_ip
+ 0            61 destinationResume_invalid
+ 0            63 destinationResume_private
+ 0            56 sourceResume_private
+ 0            26 protocolName_igmp
+ 0            32 sourceTCPFlag_F
+
+Selected attributes: 19,20,16,3,13,15,1,14,59,12,17,24,23,21,22,8,9,18,2,11,4,10,62,36,7,29,28,33,41,60,38,55,43,49,48,52,6,47,46,64,58,53,5,45,30,35,42,50,34,31,57,39,37,44,51,40,25,54,27,61,63,56,26,32 : 64
+

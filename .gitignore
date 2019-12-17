@@ -1,0 +1,12 @@
+# files to ignore
+
+
+# extensions to ignore
+*.pyc
+*.cached
+
+# directories to ignore
+.idea/
+__pycache__/
+data/
+venv/

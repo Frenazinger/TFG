@@ -1,0 +1,100 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SimpleLogistic -I 0 -M 500 -H 50 -W 0.0
+Relation:     flows-weka.filters.supervised.instance.SpreadSubsample-M1.0-X0.0-S1-weka.filters.unsupervised.attribute.Remove-R3-4,11,16-17,22-weka.filters.unsupervised.attribute.Remove-R19-55-weka.filters.unsupervised.attribute.Remove-R27,8,33,2,35,18,37,45,39,17,32,40,42,4,5,41,3,47,34,24,36,28,38,20,21,26,48,50,55,57-weka.filters.unsupervised.attribute.Remove-R29
+Instances:    133590
+Attributes:   29
+              totalDestinationBytes
+              sourceByteRate
+              destinationByteRate
+              avgSourcePacketSize
+              avgDestinationPacketSize
+              totalDestinationBytesDiffMedianScal
+              totalDestinationPacketsDiffMedianScal
+              timeLengthDiffMedianScal
+              avgDestinationPacketSizeDiffMedianScal
+              avgSourcePacketSizeDiffMedianScal
+              destinationByteRateDiffMedianScal
+              protocolName_icmp_ip
+              protocolName_tcp_ip
+              protocolName_udp_ip
+              sourceTCPFlag_Blank
+              sourceTCPFlag_R
+              sourceTCPFlag_S
+              sourceTCPFlag_U
+              destinationPortResume_registered
+              destinationPortResume_ephemeral
+              sourceResume_external
+              sourceResume_mainServer
+              sourceResume_secondaryServer
+              destinationResume_NATServer
+              destinationResume_external
+              destinationResume_internal
+              destinationResume_mainServer
+              destinationResume_secondaryServer
+              Tag
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SimpleLogistic:
+
+Class Normal :
+0.71 + 
+[destinationByteRate] * -0 +
+[protocolName_tcp_ip] * -0.56 +
+[protocolName_udp_ip] * 0.93 +
+[sourceTCPFlag_S] * -1.11 +
+[destinationPortResume_registered] * -0.35 +
+[sourceResume_external] * -0.38 +
+[destinationResume_external] * 3.14 +
+[destinationResume_internal] * -0.41
+
+Class Attack :
+-0.71 + 
+[destinationByteRate] * 0    +
+[protocolName_tcp_ip] * 0.56 +
+[protocolName_udp_ip] * -0.93 +
+[sourceTCPFlag_S] * 1.11 +
+[destinationPortResume_registered] * 0.35 +
+[sourceResume_external] * 0.38 +
+[destinationResume_external] * -3.14 +
+[destinationResume_internal] * 0.41
+
+
+Time taken to build model: 25.24 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances      129504               96.9414 %
+Incorrectly Classified Instances      4086                3.0586 %
+Kappa statistic                          0.9388
+Mean absolute error                      0.0565
+Root mean squared error                  0.1598
+Relative absolute error                 11.3022 %
+Root relative squared error             31.9556 %
+Total Number of Instances           133590     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,955    0,017    0,983      0,955    0,969      0,939    0,991     0,990     Normal
+                 0,983    0,045    0,957      0,983    0,970      0,939    0,991     0,991     Attack
+Weighted Avg.    0,969    0,031    0,970      0,969    0,969      0,939    0,991     0,990     
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 63815  2980 |     a = Normal
+  1106 65689 |     b = Attack
+
+09:10:27: Weka Explorer
+09:10:27: (c) 1999-2018 The University of Waikato, Hamilton, New Zealand
+09:10:27: web: http://www.cs.waikato.ac.nz/~ml/weka/
+09:10:27: Started on domingo, 1 septiembre 2019
+09:10:44: Base relation is now flows-weka.filters.supervised.instance.SpreadSubsample-M1.0-X0.0-S1-weka.filters.unsupervised.attribute.Remove-R3-4,11,16-17,22-weka.filters.unsupervised.attribute.Remove-R19-55-weka.filters.unsupervised.attribute.Remove-R27,8,33,2,35,18,37,45,39,17,32,40,42,4,5,41,3,47,34,24,36,28,38,20,21,26,48,50,55,57-weka.filters.unsupervised.attribute.Remove-R29 (133590 instances)
+09:11:19: Started weka.classifiers.functions.SimpleLogistic
+09:11:19: Command: weka.classifiers.functions.SimpleLogistic -I 0 -M 500 -H 50 -W 0.0
+09:15:07: Finished weka.classifiers.functions.SimpleLogistic
+09:27:55: Saved model (09:11:19 - functions.SimpleLogistic) to file 'LR_Final.model'

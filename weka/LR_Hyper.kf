@@ -1,0 +1,184 @@
+{
+	"flow_name" : "LR_Hyper",
+	"steps" : [
+		{
+			"class" : "weka.knowledgeflow.steps.Loader",
+			"properties" : {
+				"loader" : {
+					"type" : "loader",
+					"class" : "weka.core.converters.ArffLoader",
+					"filePath" : "C:/TFG/data/filtered_flows/LR_undersampled_hyper.arff",
+					"useRelativePath" : false
+				},
+				"name" : "ArffLoader"
+			},
+			"connections" : {
+				"dataSet" : [
+					"ClassAssigner(typeAttack)"
+				]
+			},
+			"coordinates" : "120,360"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.CrossValidationFoldMaker",
+			"properties" : {
+				"name" : "CrossValidationFoldMaker",
+				"numFolds" : "5",
+				"preserveOrder" : false,
+				"seed" : "1"
+			},
+			"connections" : {
+				"trainingSet" : [
+					"RemoveByName(typeAttack)"
+				],
+				"testSet" : [
+					"RemoveByName(typeAttack)"
+				]
+			},
+			"coordinates" : "360,360"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.SerializedModelSaver",
+			"properties" : {
+				"filenamePrefix" : "LR_Hyper",
+				"includeRelationNameInFilename" : false,
+				"incrementalSaveSchedule" : 1,
+				"name" : "SerializedModelSaver",
+				"outputDirectory" : "C:/TFG/data/weka"
+			},
+			"connections" : {
+			},
+			"coordinates" : "800,200"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ClassAssigner",
+			"properties" : {
+				"classColumn" : "typeAttack",
+				"name" : "ClassAssigner(typeAttack)"
+			},
+			"connections" : {
+				"dataSet" : [
+					"CrossValidationFoldMaker"
+				]
+			},
+			"coordinates" : "240,360"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ClassifierPerformanceEvaluator",
+			"properties" : {
+				"costMatrixString" : "",
+				"errorPlotPointSizeProportionalToMargin" : false,
+				"evaluateWithRespectToCosts" : false,
+				"evaluationMetricsToOutput" : "Correct,Incorrect,Kappa,Total cost,Average cost,KB relative,KB information,Correlation,Complexity 0,Complexity scheme,Complexity improvement,MAE,RMSE,RAE,RRSE,TP rate,FP rate,Precision,Recall,F-measure,MCC,ROC area,PRC area",
+				"name" : "ClassifierPerformanceEvaluator"
+			},
+			"connections" : {
+				"text" : [
+					"Final Output",
+					"TextSaver"
+				]
+			},
+			"coordinates" : "920,360"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.TextViewer",
+			"properties" : {
+				"name" : "Final Output"
+			},
+			"connections" : {
+			},
+			"coordinates" : "1040,400"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.TextViewer",
+			"properties" : {
+				"name" : "LR Output"
+			},
+			"connections" : {
+			},
+			"coordinates" : "800,520"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ClassAssigner",
+			"properties" : {
+				"classColumn" : "Tag",
+				"name" : "ClassAssigner(Tag)1"
+			},
+			"connections" : {
+				"testSet" : [
+					"CVParameterSelection"
+				]
+			},
+			"coordinates" : "640,280"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ClassAssigner",
+			"properties" : {
+				"classColumn" : "Tag",
+				"name" : "ClassAssigner(Tag)2"
+			},
+			"connections" : {
+				"trainingSet" : [
+					"CVParameterSelection"
+				]
+			},
+			"coordinates" : "640,440"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Classifier",
+			"properties" : {
+				"classifier" : {
+					"type" : "optionHandler",
+					"class" : "weka.classifiers.meta.CVParameterSelection",
+					"options" : "-P \"M 500.0 1000.0 2.0\" -P \"H 50.0 200.0 4.0\" -X 10 -S 1 -W weka.classifiers.rules.ZeroR"
+				},
+				"loadClassifierFileName" : "",
+				"name" : "CVParameterSelection",
+				"resetIncrementalClassifier" : false,
+				"updateIncrementalClassifier" : true
+			},
+			"connections" : {
+				"batchClassifier" : [
+					"SerializedModelSaver",
+					"ClassifierPerformanceEvaluator"
+				],
+				"text" : [
+					"LR Output"
+				]
+			},
+			"coordinates" : "800,360"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.TextSaver",
+			"properties" : {
+				"append" : true,
+				"file" : "C:/TFG/data/weka/LR_Hyper",
+				"name" : "TextSaver",
+				"writeTitleString" : false
+			},
+			"connections" : {
+			},
+			"coordinates" : "1040,320"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.unsupervised.attribute.RemoveByName",
+					"options" : "-E typeAttack"
+				},
+				"name" : "RemoveByName(typeAttack)"
+			},
+			"connections" : {
+				"trainingSet" : [
+					"ClassAssigner(Tag)2"
+				],
+				"testSet" : [
+					"ClassAssigner(Tag)1"
+				]
+			},
+			"coordinates" : "480,360"
+		}
+	]
+}

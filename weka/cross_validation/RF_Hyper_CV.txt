@@ -1,0 +1,118 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.meta.CVParameterSelection -P "I 100.0 1300.0 5.0" -P "K 0.0 16.0 5.0" -X 2 -S 1 -W weka.classifiers.trees.RandomForest -- -P 100 -attribute-importance -I 100 -num-slots 8 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     flows-weka.filters.supervised.instance.SpreadSubsample-M1.0-X0.0-S1-weka.filters.unsupervised.attribute.Remove-R25-61-weka.filters.supervised.instance.StratifiedRemoveFolds-S0-N10-F1-weka.filters.unsupervised.attribute.Remove-R65-weka.filters.unsupervised.attribute.Remove-R41,60,38,55,43,49,48,52,6,47,46,64,58,53,5,45,30,35,42,50,34,31,57,39,37,44,51,40,25,54,27,61,63,56,26,32
+Instances:    13359
+Attributes:   29
+              totalDestinationBytes
+              totalDestinationPackets
+              totalSourceBytes
+              totalSourcePackets
+              timeLength
+              sourceByteRate
+              destinationByteRate
+              sourcePacketRate
+              destinationPacketRate
+              avgSourcePacketSize
+              avgDestinationPacketSize
+              totalDestinationBytesDiffMedianScal
+              totalDestinationPacketsDiffMedianScal
+              totalSourceBytesDiffMedianScal
+              totalSourcePacketsDiffMedianScal
+              timeLengthDiffMedianScal
+              avgDestinationPacketSizeDiffMedianScal
+              avgSourcePacketSizeDiffMedianScal
+              destinationByteRateDiffMedianScal
+              destinationPacketRateDiffMedianScal
+              sourceByteRateDiffMedianScal
+              sourcePacketRateDiffMedianScal
+              protocolName_tcp_ip
+              protocolName_udp_ip
+              sourceTCPFlag_N/A
+              sourceTCPFlag_S
+              destinationResume_external
+              destinationResume_mainServer
+              Tag
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Cross-validated Parameter selection.
+Classifier: weka.classifiers.trees.RandomForest
+Cross-validation Parameter: '-I' ranged from 100.0 to 1300.0 with 5.0 steps
+Cross-validation Parameter: '-K' ranged from 0.0 to 16.0 with 5.0 steps
+Classifier Options: -I 700 -K 12 -P 100 -attribute-importance -num-slots 8 -M 1.0 -V 0.001 -S 1
+
+RandomForest
+
+Bagging with 700 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 12 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Attribute importance based on average impurity decrease (and number of nodes using that attribute)
+
+      0.45 (  1201)  destinationResume_external
+      0.44 (   758)  destinationResume_mainServer
+      0.38 (  6458)  totalDestinationBytes
+      0.38 (  3137)  totalDestinationPackets
+      0.3  (  1172)  destinationByteRate
+      0.3  (  2665)  totalSourcePackets
+      0.3  (  6797)  totalSourceBytes
+      0.29 (  2223)  timeLength
+      0.28 (  2560)  sourceByteRate
+      0.27 (  4869)  avgSourcePacketSize
+      0.26 (   581)  destinationPacketRate
+      0.25 (   348)  protocolName_udp_ip
+      0.24 (   248)  protocolName_tcp_ip
+      0.23 (  2564)  avgDestinationPacketSize
+      0.22 (   185)  sourceTCPFlag_N/A
+      0.22 (   574)  sourceTCPFlag_S
+      0.22 (  2872)  avgSourcePacketSizeDiffMedianScal
+      0.21 (  2178)  totalDestinationPacketsDiffMedianScal
+      0.21 (  1762)  totalSourcePacketsDiffMedianScal
+      0.21 (  2744)  totalSourceBytesDiffMedianScal
+      0.2  (   797)  destinationByteRateDiffMedianScal
+      0.2  (  2530)  totalDestinationBytesDiffMedianScal
+      0.19 (  2298)  timeLengthDiffMedianScal
+      0.19 (  1365)  sourcePacketRate
+      0.19 (  1886)  avgDestinationPacketSizeDiffMedianScal
+      0.18 (   519)  destinationPacketRateDiffMedianScal
+      0.16 (  1184)  sourceByteRateDiffMedianScal
+      0.12 (   759)  sourcePacketRateDiffMedianScal
+
+
+Time taken to build model: 157.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       13300               99.5584 %
+Incorrectly Classified Instances        59                0.4416 %
+Kappa statistic                          0.9912
+Mean absolute error                      0.0086
+Root mean squared error                  0.0634
+Relative absolute error                  1.7193 %
+Root relative squared error             12.6755 %
+Total Number of Instances            13359     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,996    0,005    0,995      0,996    0,996      0,991    0,999     0,998     Normal
+                 0,995    0,004    0,996      0,995    0,996      0,991    0,999     0,999     Attack
+Weighted Avg.    0,996    0,004    0,996      0,996    0,996      0,991    0,999     0,998     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 6655   25 |    a = Normal
+   34 6645 |    b = Attack
+
+21:07:07: Weka Explorer
+21:07:07: (c) 1999-2018 The University of Waikato, Hamilton, New Zealand
+21:07:07: web: http://www.cs.waikato.ac.nz/~ml/weka/
+21:07:07: Started on sábado, 31 agosto 2019
+21:07:21: Base relation is now flows-weka.filters.supervised.instance.SpreadSubsample-M1.0-X0.0-S1-weka.filters.unsupervised.attribute.Remove-R25-61-weka.filters.supervised.instance.StratifiedRemoveFolds-S0-N10-F1-weka.filters.unsupervised.attribute.Remove-R65-weka.filters.unsupervised.attribute.Remove-R41,60,38,55,43,49,48,52,6,47,46,64,58,53,5,45,30,35,42,50,34,31,57,39,37,44,51,40,25,54,27,61,63,56,26,32 (13359 instances)
+21:07:48: Started weka.classifiers.meta.CVParameterSelection
+21:07:48: Command: weka.classifiers.meta.CVParameterSelection -P "I 100.0 1300.0 5.0" -P "K 0.0 16.0 5.0" -X 2 -S 1 -W weka.classifiers.trees.RandomForest -- -P 100 -attribute-importance -I 100 -num-slots 8 -K 0 -M 1.0 -V 0.001 -S 1
+21:33:23: Finished weka.classifiers.meta.CVParameterSelection
